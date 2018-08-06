@@ -1,4 +1,4 @@
-<body>
+
    <div class="panel panel-primary container">
       <div class="panel-heading">Create a User Account</div>
       <div class="panel-body">
@@ -118,4 +118,9 @@
          </form>
       </div>
    </div>
-</body>
+
+
+<br>Dirty: {{ userForm.dirty }} 
+<br>Touched: {{ userForm.touched }}
+<br>Valid: {{ userForm.valid }}
+<br>Value: {{ userForm.value | json }} 

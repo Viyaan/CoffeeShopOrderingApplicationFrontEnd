@@ -26,7 +26,7 @@ function emailMatcher(c: AbstractControl) {
 export class RegisterComponent implements OnInit {
 
     userForm: FormGroup;
-    contact: IRegister;
+    register: IRegister;
     emailMessage: string;
 
     constructor(private fb: FormBuilder) { }
@@ -65,8 +65,8 @@ export class RegisterComponent implements OnInit {
     
     
       save(form: NgForm) { 
-    this.contact = new IRegister(this.userForm.value.firstName,this.userForm.value.password, this.userForm.value.emailGroup.email, this.userForm.value.lastname);
-          console.log(this.contact );
+    this.register = new IRegister(this.userForm.value.firstName,this.userForm.value.password, this.userForm.value.emailGroup.email, this.userForm.value.lastname);
+          console.log(this.register );
     //this.userService.postUser(this.contact).subscribe((data) => {console.log('Success', data), this._router.navigate(['/viewContacts'])}
     //  , (err) => console.log('Error', err));
 
