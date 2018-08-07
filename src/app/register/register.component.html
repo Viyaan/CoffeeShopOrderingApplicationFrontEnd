@@ -1,126 +1,29 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add User</h2>
+<form>
+<div class="form-group">
+    <label for="email">User Name:</label>
+    <input type="email" [(ngModel)]="user._id" placeholder="User Name" name="id" class="form-control" id="id">
+  </div>
+  <div class="form-group">
+    <label for="email">Password:</label>
+    <input type="email" [(ngModel)]="user.password" placeholder="password" name="password" class="form-control" id="password">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="email">
+  </div>
 
-   <div class="panel panel-primary container">
-      <div class="panel-heading">Create a User Account</div>
-      <div class="panel-body">
-         <form class="form-horizontal" novalidate (ngSubmit)="save()"
-         [formGroup]="userForm">
-         <fieldset>
-            <div class="form-group"
-               [ngClass]="{'has-error': (userForm.get('username').touched || 
-               userForm.get('username').dirty) &&
-               !userForm.get('username').valid }">
-               <label class="col-md-2 control-label" for="username">User
-               Name</label>
-               <div class="col-md-8">
-                  <input class="form-control" id="username" name="username"
-                     type="text" placeholder="User Name (required)"
-                     formControlName="username" /> <span class="help-block"
-                     *ngIf="(userForm.get('username').touched || 
-                     userForm.get('username').dirty) && 
-                     userForm.get('username').errors">
-                  <span *ngIf="userForm.get('username').errors.required">
-                  Please enter your user name. </span> <span
-                     *ngIf="userForm.get('username').errors.minlength"> The
-                  first name must be longer than 3 characters. </span>
-                  </span>
-               </div>
-            </div>
-            
-            
-            
-            
-            
-            <div class="form-group"
-               [ngClass]="{'has-error': (userForm.get('password').touched || 
-               userForm.get('password').dirty) &&
-               !userForm.get('password').valid }">
-               <label class="col-md-2 control-label" for="passwordid">Password</label>
-               <div class="col-md-8">
-                  <input class="form-control" id="passwordid" type="text"
-                     name="password" placeholder="Password (required)"
-                     formControlName="password" /> <span class="help-block"
-                     *ngIf="(userForm.get('password').touched || 
-                     userForm.get('password').dirty) && 
-                     userForm.get('password').errors">
-                  <span *ngIf="userForm.get('password').errors.required">
-                  Please enter your password </span>
-                  </span>
-               </div>
-            </div>
-            
-            
-            
-            
-            
-            <div class="form-group"
-               [ngClass]="{'has-error': (userForm.get('lastname').touched || 
-               userForm.get('lastname').dirty) &&
-               !userForm.get('lastname').valid }">
-               <label class="col-md-2 control-label" for="lastname">Last
-               Name</label>
-               <div class="col-md-8">
-                  <input class="form-control" id="lastname" name="lastname"
-                     type="text" placeholder="Last Name (required)"
-                     formControlName="lastname" /> <span class="help-block"
-                     *ngIf="(userForm.get('lastname').touched || 
-                     userForm.get('lastname').dirty) && 
-                     userForm.get('lastname').errors">
-                  <span *ngIf="userForm.get('lastname').errors.required">
-                  Please enter your Last name. </span> <span
-                     *ngIf="userForm.get('lastname').errors.minlength"> The
-                  Last name must be longer than 3 characters. </span>
-                  </span>
-               </div>
-            </div>
-            
-            
-            
-            <div formGroupName="emailGroup"
-               [ngClass]="{'has-error':userForm.get('emailGroup').errors}">
-               <div class="form-group" [ngClass]="{'has-error': emailMessage }">
-                  <label class="col-md-2 control-label" for="emailId">Email</label>
-                  <div class="col-md-8">
-                     <input class="form-control" id="emailId" type="email"
-                        name="email" placeholder="Email (required)"
-                        formControlName="email" /> <span class="help-block"
-                        *ngIf="emailMessage"> {{emailMessage}} </span>
-                  </div>
-               </div>
-               <div class="form-group"
-                  [ngClass]="{'has-error': (userForm.get('emailGroup.confirmEmail').touched || 
-                  userForm.get('emailGroup.confirmEmail').dirty) && 
-                  !userForm.get('emailGroup.confirmEmail').valid }">
-                  <label class="col-md-2 control-label" for="confirmEmailId">Confirm
-                  Email</label>
-                  <div class="col-md-8">
-                     <input class="form-control" id="confirmEmailId" type="email"
-                        name="confirmemail" placeholder="Confirm Email (required)"
-                        formControlName="confirmEmail" /> <span class="help-block"
-                        *ngIf="(userForm.get('emailGroup.confirmEmail').touched || 
-                        userForm.get('emailGroup.confirmEmail').dirty) && 
-                        userForm.get('emailGroup.confirmEmail').errors">
-                     <span
-                        *ngIf="userForm.get('emailGroup.confirmEmail').errors.required">
-                     Please confirm your email address. </span>
-                     </span>
-                  </div>
-               </div>
-            </div>
-            <div class="form-group">
-               <div class="col-md-4 col-md-offset-2">
-                  <span>
-                  <button class="btn btn-primary" type="submit"
-                     [disabled]="!userForm.valid">Save</button>
-                  </span>
-               </div>
-            </div>
-         </fieldset>
-         </form>
-      </div>
-   </div>
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input [(ngModel)]="user.name" placeholder="First Name" name="name" class="form-control" id="name">
+  </div>
 
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+   <input [(ngModel)]="user.lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+  </div>
 
-<br>Dirty: {{ userForm.dirty }} 
-<br>Touched: {{ userForm.touched }}
-<br>Valid: {{ userForm.valid }}
-<br>Value: {{ userForm.value | json }} 
+  <button class="btn btn-success" (click)="createUser()">Create</button>
+</form>
+</div>

@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {AuthService} from './login/auth.service';
+import {RegisterUserService} from './register/register-user.service';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
@@ -27,7 +28,7 @@ import { RegisterComponent } from './register/register.component';
 
         ])
     ],
-    providers: [AuthService],
+    providers: [AuthService, RegisterUserService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
