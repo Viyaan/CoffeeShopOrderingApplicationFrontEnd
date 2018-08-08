@@ -26,3 +26,11 @@
 .navbar {
 	font-family: lobster-two, cursive
 }
+
+
+
+.image{
+     height:100em; background-size:cover; width:auto;
+     background-image:url('https://www.strictlycoffee.co.za/wp-content/uploads/2015/07/Dollarphotoclub_59335540.jpg');
+     background-position:100% 100%;
+   }
