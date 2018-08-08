@@ -3,7 +3,7 @@ import {NgForm} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../login/auth.service';
 import {Orders} from './Orders';
-
+import { OrderService } from './order.service';
 
 @Component({
     selector: 'app-createorder',
@@ -12,7 +12,7 @@ import {Orders} from './Orders';
 })
 export class CreateorderComponent implements OnInit {
 
-    constructor(private _route: ActivatedRoute, private _router: Router) { }
+    constructor(private _route: ActivatedRoute, private _router: Router, private OrderService: orderService) { }
 
 
     userName: string
@@ -20,7 +20,7 @@ export class CreateorderComponent implements OnInit {
     item: string
     price: int;
     quantity: int;
-    order[]:Orders; 
+    order[]:Orders;
 
 
     ngOnInit() {
@@ -36,13 +36,17 @@ export class CreateorderComponent implements OnInit {
     }
 
     createOrder(): void {
-        console.log(this.order);
-        //this.order.push(new Orders(this.item, this.price, this.quantity));
-
-        console.log(this.order);
+        this.orderService.postOrder(this.order)
+            .subscribe(data => {
+                if (data.message === "Order has been taken successfully") {
+                    this.router.navigate(['/createOrder'])
+                }
+            }
+            , (err) => console.log('Error', err));
     };
+};
 
-    addOrder(): void {
-        this.order.push(new Orders(this.item, this.price, this.quantity));
-    }
+addOrder(): void {
+    this.order.push(new Orders(this.item, this.price, this.quantity)); 
+}
 }
