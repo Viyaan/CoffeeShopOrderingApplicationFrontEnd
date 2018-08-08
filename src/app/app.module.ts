@@ -29,7 +29,7 @@ import { CreateorderComponent } from './createorder/createorder.component';
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
             { path: 'about', component: AboutComponent },
-             { path: 'createorder', component: CreateorderComponent },
+             { path: 'createOrder', component: CreateorderComponent },
              {path: '', redirectTo: 'login', pathMatch: 'full'}
 
 

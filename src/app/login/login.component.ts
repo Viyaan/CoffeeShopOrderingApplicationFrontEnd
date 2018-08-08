@@ -15,9 +15,12 @@ export class LoginComponent implements OnInit {
     title: string
     errorMessage: string
 
-    constructor(private _router: Router, private auth: AuthService) { }
+    constructor(private _router: Router, private auth: AuthService) {
+        }
+        
 
     ngOnInit() {
+        
     }
 
     loginUser(): void {
@@ -26,7 +29,7 @@ export class LoginComponent implements OnInit {
             // localStorage.setItem('token', res.token);
             console.log(res);
             if (res.message === 'Authenticated') {
-                this._router.navigate(['createorder'])
+                this._router.navigate(['createOrder'], { queryParams: { "userName": this.userName, "loginDate": new Date() } })
             } else if (res.message === 'Password Mismatch') {
                 this.errorMessage = res.message;
             } else if (res.message === 'User does not Exist, Please register yourself') {
@@ -39,4 +42,5 @@ export class LoginComponent implements OnInit {
     handleError(err: string): void {
         this.errorMessage = err;
     }
+    
 }
