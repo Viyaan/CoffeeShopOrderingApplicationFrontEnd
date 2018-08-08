@@ -26,6 +26,7 @@ import { AboutComponent } from './about/about.component';
         BrowserModule, CommonModule, FormsModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot([
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
+            { path: 'about', component: AboutComponent },
 
 
         ])
