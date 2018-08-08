@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { CreateorderComponent } from './createorder/createorder.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
+import {OrderService} from './createorder/order.service';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,7 @@ import { ViewOrderComponent } from './view-order/view-order.component';
 
         ])
     ],
-    providers: [AuthService, RegisterUserService],
+    providers: [AuthService, RegisterUserService,OrderService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
