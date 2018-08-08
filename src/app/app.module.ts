@@ -14,6 +14,7 @@ import {RegisterUserService} from './register/register-user.service';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { CreateorderComponent } from './createorder/createorder.component';
+import { ViewOrderComponent } from './view-order/view-order.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { CreateorderComponent } from './createorder/createorder.component';
         RegisterComponent,
         AboutComponent,
         CreateorderComponent,
+        ViewOrderComponent,
 
     ],
     imports: [
