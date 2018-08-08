@@ -49,4 +49,8 @@ export class CreateorderComponent implements OnInit {
     addOrder(): void {
         this.order.push(new Orders(this.item, this.price, this.quantity)); 
     }
+    
+        removeOrder(): void {
+        this.order.splice(-1); 
+    }
 }
