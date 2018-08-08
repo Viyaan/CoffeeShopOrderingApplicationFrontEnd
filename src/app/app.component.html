@@ -10,6 +10,8 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a class = "nav-link" routerLink ="/register"><span class="glyphicon glyphicon-user" routerLinkActive="active"></span> Sign Up</a></li>
+       <li><a class = "nav-link"  routerLink ="/login"><span class="glyphicon glyphicon-log-in" routerLinkActive="active"></span> Login</a></li>
+      <li><a class = "nav-link" style ="cursor.pointer" *ngIf ="auth.loggedIn()" (click) ="auth.logoutUser()" routerLink ="/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 
     </ul>
   </div>
