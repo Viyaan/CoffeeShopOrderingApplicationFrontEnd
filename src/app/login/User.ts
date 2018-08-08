@@ -1,13 +1,13 @@
 export class User {
-  _id: string;
-  username: string;
-  password: string;
+    _id: string;
+    email: string;
+    password: string;
 
-  constructor(username, password) {
+    constructor(email, password) {
 
-    this.username = username;
-    this.password = password;
+        this.email = email;
+        this.password = password;
 
-  }
+    }
 }
 
