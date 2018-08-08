@@ -11,7 +11,10 @@
 
 <div class="col-md-6">
 
-	<div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+	<div class="alert alert-success" *ngIf="message">
+		
+			<strong>Success!</strong> {{message}}
+		
 	</div>
 	<h2 class="text-center">Order</h2>
 	<form>

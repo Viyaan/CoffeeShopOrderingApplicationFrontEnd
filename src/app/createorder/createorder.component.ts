@@ -21,6 +21,7 @@ export class CreateorderComponent implements OnInit {
     price: string;
     quantity: string;
     order: Orders[]  = [];
+    message:string;
 
 
     ngOnInit() {
@@ -39,7 +40,8 @@ export class CreateorderComponent implements OnInit {
         this.orderService.postOrder(this.order)
             .subscribe(data => {
                 if (data.message === "Order has been taken successfully") {
-                    this._router.navigate(['/createOrder'])
+                    this.message = data.message;
+                    this.order =[]; 
                 }
             }
             , (err) => console.log('Error', err));
