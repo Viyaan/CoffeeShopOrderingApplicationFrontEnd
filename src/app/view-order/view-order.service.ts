@@ -4,16 +4,14 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
-
-import { IRegister } from './register';
-
+import {IOrder} from './Order';
 
 
 
 @Injectable()
-export class RegisterUserService {
-        
-    
+export class ViewOrderService {
+
+ 
      httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -24,12 +22,11 @@ export class RegisterUserService {
 
   constructor(private http:HttpClient) {}
 
-  private userUrl = 'http://localhost:8080/registration';
+  private ordersUrl = 'http://localhost:8080/orders';
 
 
-  public createUser(register): Observable<any>  {
-      let body = JSON.stringify(register);
-    return this.http.post(this.userUrl, body, this.httpOptions).pipe(retry(3), 
+   fetchOrders():Observable<IOrder> {
+    return this.http.get(this.ordersUrl, this.httpOptions).pipe(retry(3),
       catchError(this.handleError)
     );
 
@@ -37,7 +34,7 @@ export class RegisterUserService {
 
 
   private handleError(error: HttpErrorResponse) {
-   if (error.error instanceof ErrorEvent) {
+  if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
     } else {
@@ -49,6 +46,7 @@ export class RegisterUserService {
     }
     // return an observable with a user-facing error message
     return Observable.throw("Response Incorrect");
+  
   };
 
 }
