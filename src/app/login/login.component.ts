@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
             // localStorage.setItem('token', res.token);
             console.log(res);
             if (res.message === 'Authenticated') {
-                this._router.navigate(['takeOrder'])
+                this._router.navigate(['createorder'])
             } else if (res.message === 'Password Mismatch') {
                 this.errorMessage = res.message;
             } else if (res.message === 'User does not Exist, Please register yourself') {

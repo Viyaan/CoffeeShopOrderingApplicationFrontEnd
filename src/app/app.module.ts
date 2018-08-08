@@ -13,6 +13,7 @@ import {AuthService} from './login/auth.service';
 import {RegisterUserService} from './register/register-user.service';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
+import { CreateorderComponent } from './createorder/createorder.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { AboutComponent } from './about/about.component';
         LoginComponent,
         RegisterComponent,
         AboutComponent,
+        CreateorderComponent,
 
     ],
     imports: [
@@ -27,7 +29,8 @@ import { AboutComponent } from './about/about.component';
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
             { path: 'about', component: AboutComponent },
-             {path: '', redirectTo: 'login', pathMatch: 'full'},
+             { path: 'createorder', component: CreateorderComponent },
+             {path: '', redirectTo: 'login', pathMatch: 'full'}
 
 
         ])
