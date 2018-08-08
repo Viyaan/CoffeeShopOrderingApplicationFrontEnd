@@ -12,15 +12,15 @@ import { OrderService } from './order.service';
 })
 export class CreateorderComponent implements OnInit {
 
-    constructor(private _route: ActivatedRoute, private _router: Router, private OrderService: orderService) { }
+    constructor(private _route: ActivatedRoute, private _router: Router, private orderService: OrderService) { }
 
 
     userName: string
     public now: Date;
     item: string
-    price: int;
-    quantity: int;
-    order[]:Orders;
+    price: number;
+    quantity: number;
+    order: Orders[]  = [];
 
 
     ngOnInit() {
@@ -39,7 +39,7 @@ export class CreateorderComponent implements OnInit {
         this.orderService.postOrder(this.order)
             .subscribe(data => {
                 if (data.message === "Order has been taken successfully") {
-                    this.router.navigate(['/createOrder'])
+                    this._router.navigate(['/createOrder'])
                 }
             }
             , (err) => console.log('Error', err));
