@@ -1,32 +1,43 @@
-import { Injectable } from '@angular/core';
-
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {IContact} from '../../contact-list/contact';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpHeaders} from '@angular/common/http';
+import {Observable, Subject} from 'rxjs';
+import {catchError, retry} from 'rxjs/operators';
 
 import { IRegister } from './register';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+
 
 @Injectable()
 export class RegisterUserService {
+        
+    
+     httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+
+    })
+  };
+    
 
   constructor(private http:HttpClient) {}
 
-  //private userUrl = 'http://localhost:8080/user-portal/user';
   private userUrl = 'http://localhost:8080/registration';
 
-  //public getUsers() {
-  //  return this.http.get<IRegister[]>(this.userUrl);
- // }
-
-//  public deleteUser(user) {
- //   return this.http.delete(this.userUrl + "/"+ user.id);
-//  }
 
   public createUser(register) {
-    return this.http.post<IRegister>(this.userUrl, register);
+      let body = JSON.stringify(register);
+    return this.http.post(this.userUrl, body, this.httpOptions).pipe(retry(3), 
+      catchError(this.handleError)
+    );
+
   }
+
+
+  private handleError(error: HttpErrorResponse) {
+   console.log(error);
+  };
 
 }

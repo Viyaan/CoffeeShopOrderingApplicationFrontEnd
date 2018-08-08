@@ -5,41 +5,28 @@ import { Router } from '@angular/router';
 import { RegisterUserService } from './register-user.service';
 
 
-
-
-
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-   userForm: FormGroup;
+    userForm: FormGroup;
     user: IRegister = new IRegister();
     emailMessage: string;
-  
-  
-  ngOnInit(): void {
-   // throw new Error('Method not implemented.');
-  }
 
-   
 
-   
+    ngOnInit(): void {
+        // throw new Error('Method not implemented.');
+    }
 
-  
+    constructor(private router: Router, private registerUserService: RegisterUserService) {
 
-   
+    }
 
-  constructor(private router: Router, private registerUserService: RegisterUserService) {
-
-  }
-
-  createUser(): void {
-    this.registerUserService.createUser(this.user)
-        .subscribe( data => {
-          alert("User registered successfully.");
-        });
-
-  };
+    createUser(): void {
+        this.registerUserService.createUser(this.user)
+            .subscribe(data=> {console.log('Success', data), this.router.navigate(['/login'])}
+      , (err) => console.log('Error', err));
+    };
 }

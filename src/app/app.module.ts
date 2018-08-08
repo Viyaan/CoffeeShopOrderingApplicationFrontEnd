@@ -12,12 +12,14 @@ import {LoginComponent} from './login/login.component';
 import {AuthService} from './login/auth.service';
 import {RegisterUserService} from './register/register-user.service';
 import { RegisterComponent } from './register/register.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
         RegisterComponent,
+        AboutComponent,
 
     ],
     imports: [
