@@ -13,7 +13,7 @@ export class OrderService {
 
 constructor(private http: HttpClient, private _router: Router) { }
 
-const httpOptions = {
+ httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
 
