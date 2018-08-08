@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../login/auth.service';
+import {Orders} from './Orders';
 
 
 @Component({
@@ -16,6 +17,11 @@ export class CreateorderComponent implements OnInit {
 
     userName: string
     public now: Date;
+    item: string
+    price: int;
+    quantity: int;
+    order[]:Orders; 
+
 
     ngOnInit() {
 
@@ -27,10 +33,16 @@ export class CreateorderComponent implements OnInit {
                 this.now = params.loginDate;
 
             })
-
     }
 
+    createOrder(): void {
+        console.log(this.order);
+        //this.order.push(new Orders(this.item, this.price, this.quantity));
 
+        console.log(this.order);
+    };
 
-
+    addOrder(): void {
+        this.order.push(new Orders(this.item, this.price, this.quantity));
+    }
 }

@@ -1,5 +1,41 @@
 
-  <h1>Hello {{userName}}</h1>
-  
- Loggin in <time> {{now}} </time>
+<h1>Hello {{userName}}</h1>
+
+Loggin in
+<time> {{now}} </time>
+
+
+
+<div class="col-md-6">
+
+	<div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+	</div>
+	<h2 class="text-center">Order</h2>
+	<form>
+		<div *ngFor="let order of order">
+
+			<div class="form-group">
+				<label for="email">Item Name:</label> <input type="item"
+					[(ngModel)]="order.item" placeholder="item" name="item"
+					class="form-control" id="password">
+			</div>
+
+
+			<div class="form-group">
+				<label for="firstName">Price:</label> <input [(ngModel)]="order.price"
+					placeholder="Price" name="price" class="form-control" id="price">
+			</div>
+
+			<div class="form-group">
+				<label for="lastName">Quantity:</label> <input
+					[(ngModel)]="order.quantity" placeholder="Last name" name="quantity"
+					class="form-control" id="qua">
+			</div>
+		</div>
+		<button class="btn btn-success" (click)="addOrder()">Add
+			Order</button>
+		<button class="btn btn-success" (click)="createOrder()">Take
+			Order</button>
+	</form>
+</div>
 
