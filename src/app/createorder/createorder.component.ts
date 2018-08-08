@@ -44,9 +44,9 @@ export class CreateorderComponent implements OnInit {
             }
             , (err) => console.log('Error', err));
     };
-};
 
-addOrder(): void {
-    this.order.push(new Orders(this.item, this.price, this.quantity)); 
-}
+
+    addOrder(): void {
+        this.order.push(new Orders(this.item, this.price, this.quantity)); 
+    }
 }
