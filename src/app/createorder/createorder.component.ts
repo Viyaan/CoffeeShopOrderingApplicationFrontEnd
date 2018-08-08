@@ -18,8 +18,8 @@ export class CreateorderComponent implements OnInit {
     userName: string
     public now: Date;
     item: string
-    price: number;
-    quantity: number;
+    price: string;
+    quantity: string;
     order: Orders[]  = [];
 
 
