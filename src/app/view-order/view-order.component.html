@@ -26,34 +26,11 @@
 		</table>
 		<div *ngFor="let item of order.items">
 			
-      <table class="table">
-					<tr class="info">
-						<th>
-		
-                              <label>Item Ordered:</label>
-						</th>
-                              <td>
-                            <span>{{item.itemName}}</span>
-						</td>
-						</tr >
-						<tr class="info">
-                            <th>
-                           <label>Price:</label>
-						</th>
-                           <td>
-                            <span>{{item.price}}</span>
-						</td>
-						</tr >
-						<tr class="info">
-                            <th>
-                              <label>Quantity:</label>
-						</th>
-                              <td>
-                            <span>{{item.quantity}}</span>
-						</td>
-						</tr>
-                          
-				</table>
+<pre>
+Item: {{item.itemName}}
+price :{{item.price}}
+quantity:{{item.quantity}}
+</pre>
                            <br> 
 	
 		</div>
