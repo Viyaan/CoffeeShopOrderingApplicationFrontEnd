@@ -17,6 +17,7 @@ import { CreateorderComponent } from './createorder/createorder.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import {OrderService} from './createorder/order.service';
 import {ViewOrderService} from './view-order/view-order.service';
+import {ViewOrderPipe} from './view-order/view-order.pipe';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import {ViewOrderService} from './view-order/view-order.service';
         AboutComponent,
         CreateorderComponent,
         ViewOrderComponent,
+        ViewOrderPipe,
 
     ],
     imports: [

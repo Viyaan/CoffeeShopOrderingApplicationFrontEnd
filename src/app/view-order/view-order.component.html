@@ -7,12 +7,12 @@
     <div class="row">
  
 			<div class="col-md-4">
-			<input class="form-control" id="myInput" type="text" placeholder="Search by orderId ..."  />
+			<input class="form-control" id="myInput" type="text" placeholder="Search by status ..." [(ngModel)]="filterOrder"  />
 			</div>
 		</div>
   </div>
   
-                <div class="list-group-item" *ngFor="let order of orderLists">
+                <div class="list-group-item" *ngFor="let order of orderLists|viewOrder:filterOrder">
                       
                            
                             <label class="col-md-2 control-label" for="orderId">Order Id:</label>
