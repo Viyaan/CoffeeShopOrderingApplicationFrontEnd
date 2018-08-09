@@ -13,6 +13,7 @@ orderLists: IOrder;
   constructor(private viewOrderService : ViewOrderService ) { }
 
   ngOnInit() {
+    this.fetchOrders();
   }
   
   fetchOrders() {

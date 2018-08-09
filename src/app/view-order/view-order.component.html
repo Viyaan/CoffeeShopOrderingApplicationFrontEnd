@@ -1,13 +1,84 @@
-<p>
-  view-order works!
-</p>
 
-
-<h1>Order List</h1>
-  <h2></h2>
-  <p>Orders:</p>
-  <ul>
-    <li *ngFor="let order of orderLists">
-      {{ order }}
-    </li>
-  </ul>
+   
+  
+  
+  
+  
+  
+<div class="container">
+    <!-- orders card -->
+<div class="jumbotron card bg-dark text-white bg-primary mb-3">
+  <div >
+   <h1>View Orders</h1> 
+  </div>
+    <div class="row">
+ 
+			<div class="col-md-4">
+			<input class="form-control" id="myInput" type="text" placeholder="Search by orderId ..."  />
+			</div>
+		</div>
+  </div>
+  
+    <div class="card card-default" id="card_orders">
+        <div id="orders" class="panel-collapse collapse show" aria-expanded="true" style="">
+            <ul class="list-group pull-down" id="order-list">
+                <li class="list-group-item" *ngFor="let order of orderLists">
+                    <div class="row w-100">
+                      
+                        <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+                           
+                            <label class="col-md-2 control-label" for="orderId">Order Id:</label>
+                            <label class="text-muted medium"> {{order.orderId}}</label>
+                            <br>
+                             <label class="col-md-2 control-label" for="status">Status:</label>
+                            <span class="text-muted">{{order.status}}</span>
+                            <br>
+                            <label class="col-md-2 control-label" for="tokenNo">Token:</label>
+                            <span class="text-muted">{{order.tokenNo}}</span>
+                            <br>
+                           
+							</div>
+                        </div>
+               
+                </li>
+               
+            </ul>
+            <!--/contacts list-->
+        </div>
+        
+        <div id="orders" class="panel-collapse collapse show" aria-expanded="true" style="">
+            <ul class="list-group pull-down" id="order-list">
+           
+                <li class="list-group-item" *ngFor="let item of orderLists.items">
+                <div class="row w-100">
+                     
+                        <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+                            <span class="fa  fa-2x text-success float-right pulse" title="online now"></span>
+                            <label class="name lead">{{item.itemId}}</label>
+                            
+                            <br> 
+                            <span class="fa  fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="In Kitchen"></span>
+                            <span class="text-muted">{{item.itemName}}</span>
+                            <br>
+                            
+                            <br> 
+                            <span class="fa  fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="In Kitchen"></span>
+                            <span class="text-muted">{{item.price}}</span>
+                            <br>
+                            
+                            <br> 
+                            <span class="fa  fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="In Kitchen"></span>
+                            <span class="text-muted">{{item.quantity}}</span>
+                            <br>
+                            </div>
+                            </div>
+                </li>
+               
+            </ul>
+            <!--/contacts list-->
+        </div>
+        
+    </div>
+</div>
+  
+  
