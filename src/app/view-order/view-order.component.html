@@ -5,85 +5,56 @@
 			<h1>View Orders</h1>
 		</div>
 		<div class="row">
-
-
-			<input class="form-control" id="myInput" type="text" placeholder="Search by status ..." [(ngModel)]="filterOrder"  />
-</div>
-
-  </div>
-  
-                <div class="list-group-item" *ngFor="let order of orderLists|viewOrder:filterOrder">
-                      
-                           
-                            <label class="col-md-2 control-label" for="orderId">Order Id:</label>
-                            <label class="text-muted medium"> {{order.orderId}}</label>
-                            <br>
-                             <label class="col-md-2 control-label" for="status">Status:</label>
-                            <span class="text-muted">{{order.status}}</span>
-                            <br>
-                            <label class="col-md-2 control-label" for="tokenNo">Token:</label>
-                            <span class="text-muted">{{order.tokenNo}}</span>
-                            <br>
-                           
-               
-               
-        
-           
-                <div class="list-group-item" *ngFor="let item of order.items">
-                     
-                        
-                              <label class="col-md-2 control-label" for="status">Item Ordered:</label>
-                            <span class="text-muted">{{item.itemName}}</span>
-                            <br>
-                            
-                            <br> 
-                           <label class="col-md-2 control-label" for="status">Price:</label>
-                            <span class="text-muted">{{item.price}}</span>
-                            <br>
-                            
-                            <br> 
-                              <label class="col-md-2 control-label" for="status">Quantity:</label>
-                            <span class="text-muted">{{item.quantity}}</span>
-                            <br>
-                            </div>
-                            </div>
-       
-        </div>
-  
-=======
-	</div>
-
-	<div class="container">
-		<div *ngFor="let order of orderLists">
-
-			<table class="table table-striped">
-				<tr>
-					<th><label>Order Id:</label></th>
-					<td><label> {{order.orderId}}</label></td>
-				</tr>
-				<tr>
-					<th><label>Status:</label></th>
-					<td><span class="label label-primary">{{order.status}}</span></td>
-				</tr>
-				<tr>
-					<td><label>Token:</label></td>
-					<td><span class="text-muted">{{order.tokenNo}}</span></td>
-				</tr>
-
-
-			</table>
-
-
-
-			<div *ngFor="let item of order.items">
-				<pre>
-
-				<label>Item Ordered:</label> <span>{{item.itemName}}</span>
-				<label>Price:</label> <span>{{item.price}}</span> 
-				<label>Quantity:</label> <span>{{item.quantity}}</span>
-			
-				</pre>
+			<div class="col-md-4">
+				<input class="form-control" id="myInput" type="text"
+					placeholder="Search by orderId ..." />
 			</div>
 		</div>
 	</div>
->>>>>>> branch 'master' of https://github.com/Viyaan/CoffeeShopOrderingApplicationFrontEnd.git
+	<div class="list-group-item" *ngFor="let order of orderLists">
+		<table class="table table-striped">
+			<tr>
+				<th><label>Order Id:</label></th>
+				<td><label> {{order.orderId}}</label></td>
+			<tr>
+				<th><label>Status:</label></th>
+				<td><span class="label label-primary">{{order.status}}</span></td>
+			</tr>
+			<tr>
+				<th><label>Token:</label></th>
+				<td><span>{{order.tokenNo}}</span></td>
+		</table>
+		<div *ngFor="let item of order.items">
+			
+      <table class="table">
+					<tr class="info">
+						<th>
+		
+                              <label>Item Ordered:</label>
+						</th>
+                              <td>
+                            <span>{{item.itemName}}</span>
+						</td>
+						</tr >
+						<tr class="info">
+                            <th>
+                           <label>Price:</label>
+						</th>
+                           <td>
+                            <span>{{item.price}}</span>
+						</td>
+						</tr >
+						<tr class="info">
+                            <th>
+                              <label>Quantity:</label>
+						</th>
+                              <td>
+                            <span>{{item.quantity}}</span>
+						</td>
+						</tr>
+                          
+				</table>
+                           <br> 
+	
+		</div>
+	</div>
