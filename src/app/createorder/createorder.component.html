@@ -25,20 +25,20 @@
 
 			<div class="form-group">
 				<label for="email">Item Name:</label> <input type="text"
-					[(ngModel)]="order.item" placeholder="item" name="item"
+					[(ngModel)]="order.item" placeholder="item" name="item" [ngModelOptions]="{standalone:true}"
 					class="form-control" id="password">
 			</div>
 
 
 			<div class="form-group">
 				<label for="firstName">Price:</label> <input type="number"
-					[(ngModel)]="order.price" placeholder="Price" name="price"
+					[(ngModel)]="order.price" placeholder="Price" name="price" [ngModelOptions]="{standalone:true}"
 					class="form-control" id="price">
 			</div>
 
 			<div class="form-group">
 				<label for="lastName">Quantity:</label> <input type="number"
-					[(ngModel)]="order.quantity" placeholder="quantity"
+					[(ngModel)]="order.quantity" placeholder="quantity" [ngModelOptions]="{standalone:true}"
 					name="quantity" class="form-control" id="qua">
 			</div>
 			<hr>

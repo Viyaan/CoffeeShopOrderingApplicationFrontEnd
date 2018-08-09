@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Order} from './Orders';
+import {Orders} from './Orders';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
