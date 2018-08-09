@@ -25,7 +25,7 @@ export class ViewOrderService {
   private ordersUrl = 'http://localhost:8080/orders';
 
 
-   fetchOrders():Observable<IOrder> {
+   fetchOrders():Observable<IOrder[]> {
     return this.http.get(this.ordersUrl, this.httpOptions).pipe(retry(3),
       catchError(this.handleError)
     );
