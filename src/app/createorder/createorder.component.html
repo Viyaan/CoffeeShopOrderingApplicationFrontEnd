@@ -4,7 +4,10 @@
 		Hello {{userName}} you have Logged in at
 		<time> {{now}} </time>
 	</h3>
-<a class="navbar-brand" href="/view-order">View Orders</a> 
+
+<button mat-flat-button color="accent" (click)="viewOrder()">
+		<mat-icon svgIcon="add_box">View Orders</mat-icon>
+	</button>
 
 	<button mat-flat-button color="accent" (click)="addOrder()">
 		<mat-icon svgIcon="add_box">Add</mat-icon>

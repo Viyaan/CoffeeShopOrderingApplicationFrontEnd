@@ -5,6 +5,7 @@ import {AuthService} from '../login/auth.service';
 import {Orders} from './Orders';
 import { OrderService } from './order.service';
 
+
 @Component({
     selector: 'app-createorder',
     templateUrl: './createorder.component.html',
@@ -55,4 +56,10 @@ export class CreateorderComponent implements OnInit {
         removeOrder(): void {
         this.order.splice(-1); 
     }
+  
+  viewOrder(): void {
+    this._router.navigate(['/view-order']);
+      
+  }
+  
 }
