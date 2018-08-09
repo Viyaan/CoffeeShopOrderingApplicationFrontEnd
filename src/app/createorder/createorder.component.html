@@ -1,40 +1,51 @@
 <div class="col-md-6">
-	<h1>Hello {{userName}}</h1>
+	<h3>Hello {{userName}} you have Logged in at <time> {{now}} </time></h3>
 
-	Loggin in
-	<time> {{now}} </time>
+	
+	
+	<button class="btn btn-success" (click)="addOrder()">Add
+			Order</button>
 
-	<img src="https://i.ytimg.com/vi/Dao0b42Gl4s/maxresdefault.jpg"
-		alt="Viyaan">
+
+		<div *ngIf="order?.length > 0">
+			<button class="btn btn-success" (click)="createOrder()">Take
+				Order</button>
+
+			<button class="btn btn-success" (click)="removeOrder()">Remove
+				Order</button>
+		</div>
+
+
+		
 </div>
 <br>
 
 <div class="col-md-6">
 
 	<div class="alert alert-success" *ngIf="message">
-		
-			<strong>Success!</strong> {{message}}
-		
+
+		<strong>Success!</strong> {{message}}
+
 	</div>
 	<h2 class="text-center">Order</h2>
 	<form>
 		<div *ngFor="let order of order">
 
 			<div class="form-group">
-				<label for="email">Item Name:</label> <input type="item"
+				<label for="email">Item Name:</label> <input type="text"
 					[(ngModel)]="order.item" placeholder="item" name="item"
 					class="form-control" id="password">
 			</div>
 
 
 			<div class="form-group">
-				<label for="firstName">Price:</label> <input
+				<label for="firstName">Price:</label> <input type="number"
 					[(ngModel)]="order.price" placeholder="Price" name="price"
 					class="form-control" id="price">
 			</div>
 
 			<div class="form-group">
-				<label for="lastName">Quantity:</label> <input
+				<label for="lastName">Quantity:</label> <input type="number"
 					[(ngModel)]="order.quantity" placeholder="Last name"
 					name="quantity" class="form-control" id="qua">
 			</div>
@@ -42,13 +53,6 @@
 		</div>
 
 
-		<button class="btn btn-success" (click)="addOrder()">Add
-			Order</button>
-		<button class="btn btn-success" (click)="createOrder()">Take
-			Order</button>
-
-		<button class="btn btn-success" (click)="removeOrder()">Remove
-			Order</button>
 	</form>
 </div>
 
