@@ -10,6 +10,7 @@ import {IOrder} from './Order';
 export class ViewOrderComponent implements OnInit {
     orderLists: IOrder;
     errorMessage: string;
+  filterOrder='';
     constructor(private viewOrderService: ViewOrderService) { }
 
     ngOnInit() {

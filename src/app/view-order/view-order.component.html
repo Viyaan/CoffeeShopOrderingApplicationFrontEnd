@@ -6,11 +6,51 @@
 		</div>
 		<div class="row">
 
-			<div class="col-md-4">
-				<input class="form-control" id="myInput" type="text"
-					placeholder="Search by orderId ..." />
-			</div>
-		</div>
+
+			<input class="form-control" id="myInput" type="text" placeholder="Search by status ..." [(ngModel)]="filterOrder"  />
+</div>
+
+  </div>
+  
+                <div class="list-group-item" *ngFor="let order of orderLists|viewOrder:filterOrder">
+                      
+                           
+                            <label class="col-md-2 control-label" for="orderId">Order Id:</label>
+                            <label class="text-muted medium"> {{order.orderId}}</label>
+                            <br>
+                             <label class="col-md-2 control-label" for="status">Status:</label>
+                            <span class="text-muted">{{order.status}}</span>
+                            <br>
+                            <label class="col-md-2 control-label" for="tokenNo">Token:</label>
+                            <span class="text-muted">{{order.tokenNo}}</span>
+                            <br>
+                           
+               
+               
+        
+           
+                <div class="list-group-item" *ngFor="let item of order.items">
+                     
+                        
+                              <label class="col-md-2 control-label" for="status">Item Ordered:</label>
+                            <span class="text-muted">{{item.itemName}}</span>
+                            <br>
+                            
+                            <br> 
+                           <label class="col-md-2 control-label" for="status">Price:</label>
+                            <span class="text-muted">{{item.price}}</span>
+                            <br>
+                            
+                            <br> 
+                              <label class="col-md-2 control-label" for="status">Quantity:</label>
+                            <span class="text-muted">{{item.quantity}}</span>
+                            <br>
+                            </div>
+                            </div>
+       
+        </div>
+  
+=======
 	</div>
 
 	<div class="container">
@@ -46,3 +86,4 @@
 			</div>
 		</div>
 	</div>
+>>>>>>> branch 'master' of https://github.com/Viyaan/CoffeeShopOrderingApplicationFrontEnd.git

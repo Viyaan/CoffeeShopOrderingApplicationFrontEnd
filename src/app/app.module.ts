@@ -17,9 +17,12 @@ import { CreateorderComponent } from './createorder/createorder.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import {OrderService} from './createorder/order.service';
 import {ViewOrderService} from './view-order/view-order.service';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+
+import {ViewOrderPipe} from './view-order/view-order.pipe';
 
 @NgModule({
     declarations: [
@@ -29,6 +32,7 @@ import {MatInputModule} from '@angular/material/input';
         AboutComponent,
         CreateorderComponent,
         ViewOrderComponent,
+        ViewOrderPipe,
 
     ],
     imports: [
