@@ -17,6 +17,7 @@ import { CreateorderComponent } from './createorder/createorder.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import {OrderService} from './createorder/order.service';
 import {ViewOrderService} from './view-order/view-order.service';
+import {PagerService} from './view-order/pager.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -48,7 +49,7 @@ import {ViewOrderPipe} from './view-order/view-order.pipe';
         ])
     ],
     exports: [BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule],
-    providers: [AuthService, RegisterUserService,OrderService, ViewOrderService],
+    providers: [AuthService, RegisterUserService,OrderService, ViewOrderService, PagerService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
