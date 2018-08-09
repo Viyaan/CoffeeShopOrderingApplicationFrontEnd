@@ -21,7 +21,7 @@ import {ViewOrderService} from './view-order/view-order.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
+import { MatButtonModule, MatIconModule } from '@angular/material';
 import {ViewOrderPipe} from './view-order/view-order.pipe';
 
 @NgModule({
@@ -36,7 +36,7 @@ import {ViewOrderPipe} from './view-order/view-order.pipe';
 
     ],
     imports: [
-        BrowserModule, CommonModule, FormsModule, HttpClientModule, ReactiveFormsModule,BrowserAnimationsModule,MatFormFieldModule,MatInputModule, RouterModule.forRoot([
+        BrowserModule, CommonModule, FormsModule, HttpClientModule, ReactiveFormsModule,BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule, RouterModule.forRoot([
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
             { path: 'about', component: AboutComponent },
@@ -47,6 +47,7 @@ import {ViewOrderPipe} from './view-order/view-order.pipe';
 
         ])
     ],
+    exports: [BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule],
     providers: [AuthService, RegisterUserService,OrderService, ViewOrderService],
     bootstrap: [AppComponent]
 })

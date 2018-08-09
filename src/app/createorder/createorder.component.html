@@ -4,44 +4,63 @@
 		Hello {{userName}} you have Logged in at
 		<time> {{now}} </time>
 	</h3>
-	<button class="btn btn-success" (click)="addOrder()">Add Order</button>
+
+
+	<button mat-flat-button color="accent" (click)="addOrder()">
+		<mat-icon svgIcon="add_box">Add</mat-icon>
+	</button>
+	<br>
+
+
+
 
 	<div *ngIf="order?.length > 0">
-		<button class="btn btn-success" (click)="createOrder()">Take
-			Order</button>
+		<br>
+		<button mat-flat-button color="accent" (click)="createOrder()">
+			<mat-icon svgIcon="add_box">Submit</mat-icon>
+		</button>
 
-		<button class="btn btn-success" (click)="removeOrder()">Remove
-			Order</button>
+
+		<button mat-flat-button color="accent" (click)="removeOrder()">
+			<mat-icon svgIcon="add_box">Remove</mat-icon>
+		</button>
 	</div>
-	<img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg" alt="Italian Trulli">
 </div>
 <br>
 <div class="col-md-6">
 	<div class="alert alert-success" *ngIf="message">
 		<strong>Success!</strong> {{message}}
 	</div>
-	<form>
-		<div *ngFor="let order of order">
+	  <div class="row">
+	<form class="example-form">
+		<div class="col-sm-20 col-md-10" *ngFor="let order of order">
 
 			<div class="form-group">
-				<label for="email">Item Name:</label> <input type="text"
-					[(ngModel)]="order.item" placeholder="item" name="item" [ngModelOptions]="{standalone:true}"
-					class="form-control" id="password">
+				<mat-form-field class="example-full-width"> <input type="text" matInput
+					[(ngModel)]="order.item" placeholder="item" name="item"
+					[ngModelOptions]="{standalone:true}" class="form-control"
+					id="password">
+					</mat-form-field>
 			</div>
 
 
+
+
 			<div class="form-group">
-				<label for="firstName">Price:</label> <input type="number"
-					[(ngModel)]="order.price" placeholder="Price" name="price" [ngModelOptions]="{standalone:true}"
-					class="form-control" id="price">
+				<mat-form-field class="example-full-width"> <input type="number" matInput
+					[(ngModel)]="order.price" placeholder="Price" name="price"
+					[ngModelOptions]="{standalone:true}" class="form-control"
+					id="price"></mat-form-field>
 			</div>
 
 			<div class="form-group">
-				<label for="lastName">Quantity:</label> <input type="number"
-					[(ngModel)]="order.quantity" placeholder="quantity" [ngModelOptions]="{standalone:true}"
-					name="quantity" class="form-control" id="qua">
+				<mat-form-field class="example-full-width">  <input type="number" matInput
+					[(ngModel)]="order.quantity" placeholder="quantity"
+					[ngModelOptions]="{standalone:true}" name="quantity"
+					class="form-control" id="qua"></mat-form-field>
 			</div>
 			<hr>
 		</div>
 	</form>
+	</div>
 </div>
