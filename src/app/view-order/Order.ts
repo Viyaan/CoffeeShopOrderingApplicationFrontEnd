@@ -11,7 +11,7 @@ export class IOrder {
      this.orderId=orderId;
      this.status=status;
      this.tokenNo=tokenNo;
-     this.items=items;
+     this.items=items; 
      
    }
 }

@@ -4,7 +4,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
-import {ActivatedRoute, Router} from '@angular/router'; 
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Injectable()
 export class OrderService {

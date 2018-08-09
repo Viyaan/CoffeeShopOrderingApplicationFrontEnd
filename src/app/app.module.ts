@@ -17,6 +17,9 @@ import { CreateorderComponent } from './createorder/createorder.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import {OrderService} from './createorder/order.service';
 import {ViewOrderService} from './view-order/view-order.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,7 @@ import {ViewOrderService} from './view-order/view-order.service';
 
     ],
     imports: [
-        BrowserModule, CommonModule, FormsModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot([
+        BrowserModule, CommonModule, FormsModule, HttpClientModule, ReactiveFormsModule,BrowserAnimationsModule,MatFormFieldModule,MatInputModule, RouterModule.forRoot([
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
             { path: 'about', component: AboutComponent },
