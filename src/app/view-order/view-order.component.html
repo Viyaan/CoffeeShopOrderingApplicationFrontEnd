@@ -1,15 +1,15 @@
 <div class="container">
-    <!-- orders card -->
-<div class="jumbotron card bg-dark text-white bg-primary mb-3">
-  <div >
-   <h1>View Orders</h1> 
-  </div>
-    <div class="row">
- 
-			<div class="col-md-4">
-			<input class="form-control" id="myInput" type="text" placeholder="Search by status ..." [(ngModel)]="filterOrder"  />
-			</div>
+	<!-- orders card -->
+	<div class="jumbotron card bg-dark text-white bg-primary mb-3">
+		<div>
+			<h1>View Orders</h1>
 		</div>
+		<div class="row">
+
+
+			<input class="form-control" id="myInput" type="text" placeholder="Search by status ..." [(ngModel)]="filterOrder"  />
+</div>
+
   </div>
   
                 <div class="list-group-item" *ngFor="let order of orderLists|viewOrder:filterOrder">
@@ -50,3 +50,40 @@
        
         </div>
   
+=======
+	</div>
+
+	<div class="container">
+		<div *ngFor="let order of orderLists">
+
+			<table class="table table-striped">
+				<tr>
+					<th><label>Order Id:</label></th>
+					<td><label> {{order.orderId}}</label></td>
+				</tr>
+				<tr>
+					<th><label>Status:</label></th>
+					<td><span class="label label-primary">{{order.status}}</span></td>
+				</tr>
+				<tr>
+					<td><label>Token:</label></td>
+					<td><span class="text-muted">{{order.tokenNo}}</span></td>
+				</tr>
+
+
+			</table>
+
+
+
+			<div *ngFor="let item of order.items">
+				<pre>
+
+				<label>Item Ordered:</label> <span>{{item.itemName}}</span>
+				<label>Price:</label> <span>{{item.price}}</span> 
+				<label>Quantity:</label> <span>{{item.quantity}}</span>
+			
+				</pre>
+			</div>
+		</div>
+	</div>
+>>>>>>> branch 'master' of https://github.com/Viyaan/CoffeeShopOrderingApplicationFrontEnd.git
