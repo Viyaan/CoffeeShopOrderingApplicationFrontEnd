@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+
+## Stack
+
+* Persistence store: [H2]
+* Backend: [Spring boot]
+* Awesome [AngularJS](http://www.angularjs.org/) on the client
+* CSS based on [Bootstrap][Angular Material]
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
